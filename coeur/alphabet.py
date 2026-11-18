@@ -55,7 +55,7 @@ class Alphabet:
     def validate_symbol(self, symbol):
         """
         Vérifie si un symbole appartient a l'alphabet en utilisant la fonction contains du haut
-        et si il ya errreur ca va déclenche une ValueError(une exception).
+        et si il ya erreur ca va déclenche une ValueError(une exception).
         """
         if not self.contains(symbol):
             raise ValueError(
@@ -66,7 +66,7 @@ class Alphabet:
 
     def validate_symbols(self, symbols):
         """
-        Vérifie plusieurs symboles et retoourne la liste des symoles inconnue et une liste vide au cas ou il ya pas d'erreur.
+        Vérifie plusieurs symboles et retourne la liste des symoles inconnue et une liste vide au cas ou il ya pas d'erreur.
         """
         unknown_symbols = []#pour les symboles inconnues
 

@@ -10,7 +10,7 @@ from coeur.syntax import (
 def test_operators():
     assert is_operator("*")
     assert is_operator("|")
-    assert is_operator("(")
+    assert is_operator("[")
     assert not is_operator("a")
 
 

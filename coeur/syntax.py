@@ -4,7 +4,7 @@ Définitions syntaxiques utilisées par AutomataCore.
 Ce module ne construit pas encore les automates.
 Il définit les opérateurs et les règles d'échappement.
 """
-
+TIRET = "-"
 # Opérateurs de notre langage.
 UNION = "|"
 CONCAT = "."
@@ -13,11 +13,10 @@ PLUS = "+"
 OPTIONAL = "?"
 LEFT_PAREN = "("
 RIGHT_PAREN = ")"
-
-# Symbole représentant le mot vide.
+LEFT_BRACKET = "["
+RIGH_BRACKET = "]"
 EPSILON = "ε"
-
-# Ensemble des caractères réservés.
+    # Ensemble des caractères réservés.
 OPERATORS = frozenset({
     UNION,
     CONCAT,
@@ -26,9 +25,9 @@ OPERATORS = frozenset({
     OPTIONAL,
     LEFT_PAREN,
     RIGHT_PAREN,
-})
-
-# Caractères spéciaux pouvant être échappés et mis avant slash \.
+   LEFT_BRACKET,
+   RIGH_BRACKET, TIRET,
+})#spéciaux pouvant être échappés et mis avant slash \.
 # Exemple : \* représente le symbole ordinaire "*".
 ESCAPABLE_SYMBOLS = frozenset({
     "|",
@@ -42,9 +41,9 @@ ESCAPABLE_SYMBOLS = frozenset({
     "}",
     "\\",
     "ε",
+    "[",
+    "]", "-",
 })
-
-
 def is_operator(character):
     """pour savoir si un caracteres fait partie des operateurs"""
     return character in OPERATORS
