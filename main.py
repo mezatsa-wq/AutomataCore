@@ -3,7 +3,6 @@ import sys
 from PySide6.QtWidgets import QApplication
 
 from interface.main_window import MainWindow
-from interface.styles import APP_STYLE
 
 
 def main():
@@ -11,8 +10,7 @@ def main():
     app = QApplication(sys.argv)
 
     app.setApplicationName("AutomataCore")
-    app.setStyle("Fusion")
-    app.setStyleSheet(APP_STYLE)
+    app.setOrganizationName("AutomataCore")
 
     window = MainWindow()
     window.show()
