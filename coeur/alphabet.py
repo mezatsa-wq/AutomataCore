@@ -1,3 +1,4 @@
+
 class Alphabet:
 
     def __init__(self, symbols):

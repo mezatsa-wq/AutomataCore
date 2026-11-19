@@ -1,5 +1,6 @@
 from graphviz import Digraph
 from coeur.afn_afd import afn_vers_afd
+from  coeur.syntax import EPSILON
 
 def nom_etat(etat):
     return "{"+",".join(sorted(map(str,etat)))+"}"
@@ -7,8 +8,8 @@ def nom_etat(etat):
 def dessiner_afd(afd,nom_fichier="afd"):
     dot= Digraph("AFD",format="png")
     dot.attr(rankdir="LR")
-
     etats={afd["initial"]} | set(afd["finaux"])
+
     for(source,lettre), cible in afd["transitions"].items():
         etats.add(source)
         etats.add(cible)
@@ -32,6 +33,7 @@ if __name__=="__main__":
             "initial": 0,
             "finaux":{3},
             "transitions":{
+                (0, EPSILON):{1},
                 (0, "a"):{0,1},
                 (0, "b"):{0},
                 (1, "b"):{2},
