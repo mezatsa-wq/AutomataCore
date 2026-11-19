@@ -10,7 +10,6 @@ def epsilon_fermeture(etats,transitions):
                 a_traiter.append(voisin)
     return frozenset(resultat)
 
-
 def afn_vers_afd(afn):
     trans_afn=afn["transitions"]
     initial=epsilon_fermeture({afn["initial"]},trans_afn)

@@ -1,6 +1,6 @@
 from coeur.afn_afd import afn_vers_afd
 from coeur.syntax import EPSILON
-
+import pytest
 
 def test_finit_par_ab():
     afn = {
